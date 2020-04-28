@@ -6,8 +6,8 @@ Partial Class admin_Rtest
     Private Sub BtnRefresh_Click(sender As Object, e As EventArgs) Handles BtnRefresh.Click
         Dim strName As String = ""
         Dim strMax As String = ""
-        strName = TxtName.Text
-        strMax = TxtValue.Text
+        strName = left(TxtName.Text,20) 
+        strMax = cint(TxtValue.Text)
 
         Dim strReturned = RunRScript("C:\Program Files\R\R-4.0.0\bin\Rscript.exe", "D:\RScripts\randohist.R \""" & strName & "\"" " & strMax & "", "D:\RScripts\")
 
